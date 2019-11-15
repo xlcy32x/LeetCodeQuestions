@@ -7,5 +7,5 @@ cl /W4 /EHsc /Fo..\Output\ /Fe..\Output\ %1.cpp
 popd
 
 pushd Output
-%1.exe
+%1.exe > %1.txt 
 popd

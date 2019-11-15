@@ -1,0 +1,7 @@
+1) Smart Pointers
+2) c++ 11 Concepts
+3) enum class
+4) unordered_map -> hash map, collisions
+5) std::map
+6) tree, max and min height, count.
+7) Trees.

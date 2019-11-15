@@ -12,10 +12,10 @@ public:
 
     //test case to be input in deriving class
     template <typename ...Args>
-    void Do(Args... args)
+    void Do(Args&&... args)
     {
         auto start = std::chrono::steady_clock::now();
-        static_cast<DERIVING&>(*this).Do(args...);
+        static_cast<DERIVING&>(*this).Do(std::forward<Args>(args)...);
         auto end = std::chrono::steady_clock::now();
 
         std::cout<<"Time Difference (milli sec) : "<< std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()<<std::endl;
