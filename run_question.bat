@@ -1,11 +1,11 @@
 call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\vcvars32.bat"
 
-pushd Questions
+pushd Questions\%1
 
-cl /W4 /EHsc /Fo..\Output\ /Fe..\Output\ %1.cpp 
+cl.exe /W4 /EHsc /Fo..\..\Output\ /Fe..\..\Output\ %2.cpp 
 
 popd
 
 pushd Output
-%1.exe
+%2.exe
 popd

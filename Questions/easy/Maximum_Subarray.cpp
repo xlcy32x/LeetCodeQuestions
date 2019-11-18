@@ -1,4 +1,4 @@
-#include "..\Header\inc.h"
+#include "..\..\Header\inc.h"
 
 class Solution : public SolutionBase<Solution>
 {

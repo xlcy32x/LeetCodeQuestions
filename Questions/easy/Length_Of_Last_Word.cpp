@@ -1,4 +1,4 @@
-#include "..\Header\inc.h"
+#include "..\..\Header\inc.h"
 
 class Solution : public SolutionBase<Solution>
 {
@@ -18,19 +18,22 @@ public:
           if(*it == ' ')
           {
             spaceIterator = it;
-            return spaceIterator - s.rbegin();
+            break;
           }
         }
+        return spaceIterator - s.rbegin();
       }
       else
       {
         auto startIt = s.rend();
+        auto endIt = s.rend();
         for(auto it = s.rbegin(); it != s.rend(); ++it)
         {
           if(*it != ' ')
           {
             startIt = it;
-            for(auto endIt = startIt + 1; endIt != s.rend(); ++endIt)
+            endIt = startIt + 1;
+            for(; endIt != s.rend(); ++endIt)
             {
               if(*endIt == ' ')
                 break;
@@ -39,7 +42,6 @@ public:
           }
         }
       }
-      
       return 0;
     }
 
@@ -53,6 +55,11 @@ public:
 int main()
 {
     std::unique_ptr<SolutionBase<Solution>> solutionPtr(new Solution);
+    solutionPtr->Do("a");
     solutionPtr->Do("a ");
+    solutionPtr->Do(" a ");
+    solutionPtr->Do("a    ");
+    solutionPtr->Do("  a  ");
+    solutionPtr->Do("  aaaaa  ");
     std::cin.get();
 }
